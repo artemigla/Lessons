@@ -3,13 +3,14 @@ import { View, Text, ScrollView, TextInput, TouchableOpacity, ImageBackground } 
 import { styles } from './Styles';
 import Background from '../assets/Background.jpg';
 import { regex } from '../constants/Constants';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export const Content = () => {
 
     //Напиши пожалуйста, стоит ли так "вытягивать" стили, или нет?
     const { container, backgroundImage, profile, form,
         input, button, textButton, disabledButton,
-        info, text } = styles;
+        info, text, icon } = styles;
 
     const [inputName, setInputName] = useState('');
     const [name, setName] = useState('Name');
@@ -29,6 +30,8 @@ export const Content = () => {
         return this.charAt(0).toUpperCase() + this.slice(1);
     }
 
+    const clearName = () => setInputName('');
+
     return (
         <View style={container}>
             <ImageBackground source={Background} style={backgroundImage}>
@@ -42,6 +45,15 @@ export const Content = () => {
                             onChangeText={handlerInputName}
                         />
 
+                        {/*Добавил иконку в поле ввода, на которую можно нажать, чтоб очистить поле.*/}
+                        <View>
+                            {inputName.trim(' ').length > 1 ? <Icon
+                                style={icon}
+                                name="close-circle-outline" size={26}
+                                color="gray"
+                                onPress={clearName}
+                            /> : null}
+                        </View>
                         {/* Это проверка на то, чтоб вместо имени, не выводилась пустая строка */}
                         {inputName.trim(' ').length > 1 ?
                             <TouchableOpacity style={button} onPress={handlerButton}>

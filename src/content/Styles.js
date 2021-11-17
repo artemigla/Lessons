@@ -59,5 +59,9 @@ export const styles = StyleSheet.create({
     backgroundImage: {
         flex: 1,
         resizeMode: 'cover'
+    },
+    icon: {
+        marginLeft: -32,
+        marginTop: 8
     }
 });
