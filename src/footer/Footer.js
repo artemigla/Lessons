@@ -1,19 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-
+import { View, Text } from 'react-native';
+import { styles } from './Styles';
 export const Footer = () => {
+
+    const { container, text } = styles;
     return (
-        <View style={styles.container}>
-            <Text>Footer</Text>
+        <View style={container}>
+            <Text style={text}>Footer</Text>
         </View>
     );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#2c3e50',
-    },
-});
