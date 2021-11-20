@@ -32,6 +32,8 @@ export const Content = () => {
 
     const clearName = () => setInputName('');
 
+    const activeButton = inputName.trim(' ').length;
+
     return (
         <View style={container}>
             <ImageBackground source={Background} style={backgroundImage}>
@@ -47,7 +49,7 @@ export const Content = () => {
 
                         {/*Добавил иконку в поле ввода, на которую можно нажать, чтоб очистить поле.*/}
                         <View>
-                            {inputName.trim(' ').length > 1 ? <Icon
+                            {activeButton ? <Icon
                                 style={icon}
                                 name="close-circle-outline" size={26}
                                 color="gray"
@@ -55,7 +57,7 @@ export const Content = () => {
                             /> : null}
                         </View>
                         {/* Это проверка на то, чтоб вместо имени, не выводилась пустая строка */}
-                        {inputName.trim(' ').length > 1 ?
+                        {activeButton ?
                             <TouchableOpacity style={button} onPress={handlerButton}>
                                 <Text style={textButton}>Save</Text>
                             </TouchableOpacity> :
@@ -67,7 +69,7 @@ export const Content = () => {
 
                         {/* Отображает строку из инпута*/}
                         <Text style={text}>Your name is:
-                            <Text style={{ color: 'blue' }}>{` ${name.capitalize()}`}</Text>
+                            <Text style={{ color: 'blue' }}>{` ${name.trim(' ').capitalize()}`}</Text>
                         </Text>
                     </View>
                 </ScrollView>
