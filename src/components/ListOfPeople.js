@@ -19,5 +19,5 @@ export const ListOfPeople = [
         "img": "https://upload.wikimedia.org/wikipedia/commons/d/da/BjarneStroustrup.jpg",
         "company": "Founder of C++",
         "description": "Björn Straustrup developed a high-level C ++ programming language. Straustrup pioneered the use of object-oriented and general techniques in the creation of programs in which efficiency is a key property."
-    }
+    },
 ]

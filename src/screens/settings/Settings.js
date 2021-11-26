@@ -4,7 +4,7 @@ import { styles } from './styles';
 export const Settings = () => {
     return (
         <View style={styles.container}>
-            <Text>Settings</Text>
+            <Text>The settings for choosing the language, changing the theme will be placed here ...</Text>
         </View>
     );
 };
