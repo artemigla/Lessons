@@ -1,15 +1,11 @@
 import React from 'react';
-import { StatusBar, StyleSheet, View } from 'react-native';
-import { RootFile } from './src/RootFile';
+import { StatusBar, StyleSheet, View, Text } from 'react-native';
 
-{/*Файл .Eslintrc пытался настроить, но он у меня, что-то не работает. 
-  Наверное что-то упускаю, так как с правилами eslint'a, почти не работал.
-*/}
 const App = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'default'} />
-      <RootFile />
+      <Text>Hello</Text>
     </View>
   );
 };

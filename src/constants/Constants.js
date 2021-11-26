@@ -1,1 +1,0 @@
-export const regex = /[^a-zA-Z а-яА-Я ІіЇїє]/;
