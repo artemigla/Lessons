@@ -7,23 +7,26 @@ import Ionicon from 'react-native-vector-icons/Ionicons';
 import { HomeScreen } from '../screens/home/HomeScreen';
 import { ProfileScreen } from '../screens/profile/ProfileScreen';
 import { Settings } from '../screens/settings/Settings';
-
+import { PeopleContext } from './PeopleContext';
+import { ListOfPeople } from './ListOfPeople';
 export const Navigation = () => {
     const { Navigator, Screen } = createNativeStackNavigator();
     const BottomTab = createBottomTabNavigator();
 
     const Home = () => {
         return (
-            <Navigator>
-                <Screen
-                    name={'HomeScreen'}
-                    component={HomeScreen}
-                    options={{ headerShown: false }} />
-                <Screen
-                    name={'Profile'}
-                    component={ProfileScreen}
-                    options={{ headerTitleAlign: 'center' }} />
-            </Navigator>
+            <PeopleContext.Provider value={{ people: ListOfPeople }}>
+                <Navigator>
+                    <Screen
+                        name={'HomeScreen'}
+                        component={HomeScreen}
+                        options={{ headerShown: false }} />
+                    <Screen
+                        name={'Profile'}
+                        component={ProfileScreen}
+                        options={{ headerTitleAlign: 'center' }} />
+                </Navigator>
+            </PeopleContext.Provider>
         );
     };
 

@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, TouchableOpacity, FlatList, Image } from 'react-native';
-import { ListOfPeople } from '../../components/ListOfPeople';
+import { PeopleContext } from '../../components/PeopleContext';
 import { styles } from './style';
 export const HomeScreen = ({ navigation }) => {
+
+    const { people } = useContext(PeopleContext)
     return (
         <View style={styles.container}>
             <View style={styles.title}>
                 <Text style={styles.text}>Main page</Text>
             </View>
             <FlatList
-                data={ListOfPeople}
+                data={people}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => {
                     return (
