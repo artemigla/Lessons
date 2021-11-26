@@ -1,11 +1,11 @@
 import React from 'react';
 import { StatusBar, StyleSheet, View, Text } from 'react-native';
-
+import { Navigation } from './src/components/Navigation';
 const App = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'default'} />
-      <Text>Hello</Text>
+      <Navigation />
     </View>
   );
 };
