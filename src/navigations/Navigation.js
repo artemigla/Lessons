@@ -1,9 +1,22 @@
 import React from 'react';
+import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 import { TabNavigation } from './TabNavigation';
 import { Settings } from '../screens/settings/Settings';
 import { Notifications } from '../screens/notifacations/Notifications';
+import { UserProfile } from '../screens/user/UserProfile';
+
+const CustomDrawer = (props) => {
+    return (
+        <View style={{ flex: 1 }}>
+            <UserProfile />
+            <DrawerContentScrollView {...props}>
+                <DrawerItemList {...props} />
+            </DrawerContentScrollView>
+        </View>
+    );
+}
 
 export const Navigation = () => {
     const { Navigator, Screen } = createDrawerNavigator();
@@ -18,6 +31,7 @@ export const Navigation = () => {
                     drawerInactiveTintColor: 'white',
                     headerShown: false
                 }}
+                drawerContent={(props) => <CustomDrawer {...props} />}
             >
                 <Screen
                     name={'DrawNavigation'}
