@@ -5,18 +5,25 @@ import { Settings } from '../screens/settings/Settings';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 
 const { Navigator, Screen } = createBottomTabNavigator();
+
 export const TabNavigation = () => {
     return (
-        <Navigator initialRouteName={'Home'}>
+        <Navigator
+            initialRouteName={'Home'}
+            screenOptions={() => ({
+                tabBarActiveTintColor: 'red'
+            })}
+        >
             <Screen
                 name={'Home'}
                 component={HomeNavigation}
                 options={{
                     headerShown: false,
                     tabBarIcon: ({ size, color }) => (
-                        <Ionicon name='home' size={size} color={color} />
+                        <Ionicon name={'home'} size={size} color={color} />
                     )
-                }} />
+                }}
+            />
             <Screen
                 name={'Settings'}
                 component={Settings}
@@ -28,4 +35,4 @@ export const TabNavigation = () => {
                 }} />
         </Navigator>
     )
-}
+};

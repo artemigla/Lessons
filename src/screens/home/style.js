@@ -4,6 +4,21 @@ export const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'silver'
     },
+    mb: {
+        marginBottom: 30
+    },
+    header: {
+        height: '5%',
+        backgroundColor: '#1E90FF',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    iconMenu: {
+        justifyContent: 'center',
+    },
+    icon: {
+        padding: 3
+    },
     title: {
         alignItems: 'center'
     },
