@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, FlatList, Image, ActivityIndicator } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, Image, ActivityIndicator } from 'react-native';
 import { PeopleContext } from '../../components/PeopleContext';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import Ionicon from 'react-native-vector-icons/Ionicons';
+import PropTypes from 'prop-types';
 import { styles } from './style';
 
 export const HomeScreen = ({ navigation }) => {
@@ -47,3 +47,10 @@ export const HomeScreen = ({ navigation }) => {
         </View>
     );
 };
+
+HomeScreen.propTypes = {
+    navigation: PropTypes.shape({
+        openDrawer: PropTypes.func.isRequired,
+        navigate: PropTypes.func.isRequired
+    })
+}

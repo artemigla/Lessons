@@ -3,6 +3,7 @@ import { View, Text, Image } from 'react-native';
 import { Caption } from 'react-native-paper';
 import logo from '../../assets/Logo.png';
 import { styles } from './Styles';
+
 export const UserProfile = () => {
     return (
         <View style={styles.container}>

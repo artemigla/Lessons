@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
+import PropTypes from 'prop-types';
 import { styles } from './styles';
 export const ProfileScreen = ({ route }) => {
     const { item } = route.params;
@@ -12,3 +13,9 @@ export const ProfileScreen = ({ route }) => {
         </View>
     );
 };
+
+ProfileScreen.propTypes = {
+    route: PropTypes.shape({
+        params: PropTypes.object.isRequired
+    })
+}
