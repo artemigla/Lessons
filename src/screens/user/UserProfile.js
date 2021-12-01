@@ -7,9 +7,11 @@ import { styles } from './Styles';
 export const UserProfile = () => {
     return (
         <View style={styles.container}>
-            <Image style={styles.logo} source={logo} />
-            <Text style={styles.text}>Nick Name</Text>
-            <Caption style={styles.status}>Status</Caption>
+            <View>
+                <Image style={styles.logo} source={logo} />
+                <Text style={styles.text}>Nick Name</Text>
+                <Caption style={styles.status}>Status</Caption>
+            </View>
         </View>
     );
 };

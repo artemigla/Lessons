@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import { TabNavigation } from './TabNavigation';
+import { CloseDrawer } from '../components/closeDrawer/CloseDrawer';
 import { UserProfile } from '../screens/user/UserProfile';
 import { Message } from '../screens/message/Message';
 import { Notifications } from '../screens/notifacations/Notifications';
@@ -12,6 +13,7 @@ import { Settings } from '../screens/settings/Settings';
 const CustomDrawer = (props) => {
     return (
         <View style={{ flex: 1 }}>
+            <CloseDrawer {...props} />
             <UserProfile />
             <DrawerContentScrollView {...props}>
                 <DrawerItemList {...props} />
@@ -28,7 +30,7 @@ export const Navigation = () => {
                 screenOptions={{
                     drawerStyle: {
                         width: '60%',
-                        backgroundColor: 'black',
+                        backgroundColor: '#00BFFF'
                     },
                     drawerInactiveTintColor: 'white',
                     headerShown: false,

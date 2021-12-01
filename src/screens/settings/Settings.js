@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import { ReturnToHomeScreen } from '../../components/returnToHomeScreen/ReturnToHomeScreen';
 import PropTypes from 'prop-types';
 import { styles } from './styles';
+
 export const Settings = (props) => {
     return (
         <View style={styles.container}>

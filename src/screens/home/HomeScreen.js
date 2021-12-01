@@ -50,5 +50,5 @@ HomeScreen.propTypes = {
     navigation: PropTypes.shape({
         openDrawer: PropTypes.func.isRequired,
         navigate: PropTypes.func.isRequired
-    })
+    }).isRequired
 }

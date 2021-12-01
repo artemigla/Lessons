@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
         height: '30%',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'white'
+        backgroundColor: 'white',
     },
     logo: {
         width: 80,
@@ -23,5 +23,13 @@ export const styles = StyleSheet.create({
     status: {
         fontWeight: 'bold',
         fontSize: 17
+    },
+    iconContainer: {
+        width: '100%',
+        marginBottom: 35
+    },
+    icon: {
+        alignItems: 'flex-end',
+        marginRight: 10
     }
 });
