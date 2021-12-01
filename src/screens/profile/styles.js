@@ -3,7 +3,7 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        margin: 30
+        margin: 30,
     },
     img: {
         height: 150,

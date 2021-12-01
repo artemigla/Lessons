@@ -31,7 +31,8 @@ export const Navigation = () => {
                         backgroundColor: 'black',
                     },
                     drawerInactiveTintColor: 'white',
-                    headerShown: false
+                    headerShown: false,
+                    drawerType: 'slide'
                 }}
                 drawerContent={(props) => <CustomDrawer {...props} />}
             >

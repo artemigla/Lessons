@@ -4,5 +4,9 @@ export const styles = StyleSheet.create({
         height: '7%',
         justifyContent: 'center',
         backgroundColor: '#1E90FF'
+    },
+    icon: {
+        marginLeft: 10,
+        fontSize: 35
     }
 });

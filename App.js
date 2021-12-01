@@ -5,7 +5,7 @@ import { Navigation } from './src/navigations/Navigation';
 const App = () => {
   return (
     <View style={styles.container}>
-      <StatusBar barStyle={'default'} />
+      <StatusBar backgroundColor={'#1E90FF'} />
       <Navigation />
     </View>
   );
@@ -13,7 +13,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   }
 });
 

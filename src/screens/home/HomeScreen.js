@@ -17,13 +17,11 @@ export const HomeScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <TouchableOpacity onPress={() => navigation.openDrawer()}>
-                    <View style={styles.iconMenu}>
-                        <Ionicon style={styles.icon} name={'menu-outline'} size={35} />
-                    </View>
+                <TouchableOpacity onPress={() => navigation.openDrawer()} style={styles.icon}>
+                    <Ionicon name={'menu-outline'} size={35} style={styles.icon} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Notification')}>
-                    <Ionicon name={'notifications'} size={21} style={styles.icon} />
+                <TouchableOpacity style={styles.icon} onPress={() => navigation.navigate('Notification')}>
+                    <Ionicon name={'notifications'} size={25} style={styles.icon} />
                 </TouchableOpacity>
             </View>
             {isIndicator ? <View>

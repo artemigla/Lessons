@@ -7,7 +7,7 @@ export const ReturnToHomeScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-                <Ionicon name={'arrow-back'} size={25} />
+                <Ionicon name={'arrow-back'} size={28} style={styles.icon} />
             </TouchableOpacity>
 
         </View>

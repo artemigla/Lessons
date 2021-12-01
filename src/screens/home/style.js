@@ -8,15 +8,13 @@ export const styles = StyleSheet.create({
         marginBottom: 30
     },
     header: {
-        height: '5%',
+        height: '9%',
         backgroundColor: '#1E90FF',
         flexDirection: 'row',
         justifyContent: 'space-between'
     },
-    iconMenu: {
-        justifyContent: 'center',
-    },
     icon: {
+        justifyContent: 'center',
         padding: 3
     },
     title: {
