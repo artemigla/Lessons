@@ -30,7 +30,7 @@ export const TabNavigation = () => {
                 name={'Message'}
                 component={Message}
                 options={{
-                    headerTitleAlign: 'center',
+                    headerShown: false,
                     tabBarIcon: ({ size, color }) => <Ionicon name={'mail'} size={size} color={color} />
                 }}
             />
@@ -38,7 +38,7 @@ export const TabNavigation = () => {
                 name={'Settings'}
                 component={Settings}
                 options={{
-                    headerTitleAlign: 'center',
+                    headerShown: false,
                     tabBarIcon: ({ size, color }) => (
                         <Ionicon name='settings' size={size} color={color} />
                     )
