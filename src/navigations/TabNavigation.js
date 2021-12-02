@@ -48,7 +48,7 @@ export const TabNavigation = () => {
                 component={Location}
                 options={{
                     headerTitleAlign: 'center',
-                    tabBarIcon: ({ size, color }) => <Ionicon name={'navigate'} size={size} color={color} />
+                    tabBarIcon: ({ size, color }) => <Ionicon name={'location'} size={size} color={color} />
                 }}
             />
         </Navigator>

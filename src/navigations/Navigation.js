@@ -1,29 +1,17 @@
 import React from 'react';
-import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import { TabNavigation } from './TabNavigation';
-import { CloseDrawer } from '../components/closeDrawer/CloseDrawer';
-import { UserProfile } from '../screens/user/UserProfile';
+import { CustomDrawer } from '../components/CustomDrawer/CustomDrawer';
 import { Message } from '../screens/message/Message';
 import { Notifications } from '../screens/notifacations/Notifications';
 import { Settings } from '../screens/settings/Settings';
 
-const CustomDrawer = (props) => {
-    return (
-        <View style={{ flex: 1 }}>
-            <CloseDrawer {...props} />
-            <UserProfile />
-            <DrawerContentScrollView {...props}>
-                <DrawerItemList {...props} />
-            </DrawerContentScrollView>
-        </View>
-    );
-}
+const { Navigator, Screen } = createDrawerNavigator();
 
 export const Navigation = () => {
-    const { Navigator, Screen } = createDrawerNavigator();
+
     return (
         <NavigationContainer>
             <Navigator
@@ -33,6 +21,7 @@ export const Navigation = () => {
                         backgroundColor: '#00BFFF'
                     },
                     drawerInactiveTintColor: 'white',
+                    drawerActiveTintColor: 'red',
                     headerShown: false,
                     drawerType: 'slide'
                 }}

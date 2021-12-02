@@ -2,16 +2,14 @@ import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { Caption } from 'react-native-paper';
 import logo from '../../assets/Logo.png';
-import { styles } from './Styles';
+import styles from './styles';
 
 export const UserProfile = () => {
     return (
         <View style={styles.container}>
-            <View>
-                <Image style={styles.logo} source={logo} />
-                <Text style={styles.text}>Nick Name</Text>
-                <Caption style={styles.status}>Status</Caption>
-            </View>
+            <Image style={styles.logo} source={logo} />
+            <Text style={styles.text}>Nick Name</Text>
+            <Caption style={styles.status}>Status</Caption>
         </View>
     );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import PropTypes from 'prop-types';
-import { styles } from "./Styles";
+import { styles } from "./styles";
 
 export const CloseDrawer = ({ navigation }) => {
     return (

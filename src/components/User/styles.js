@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         height: '30%',
         justifyContent: 'center',
@@ -23,13 +23,6 @@ export const styles = StyleSheet.create({
     status: {
         fontWeight: 'bold',
         fontSize: 17
-    },
-    iconContainer: {
-        width: '100%',
-        marginBottom: 35
-    },
-    icon: {
-        alignItems: 'flex-end',
-        marginRight: 10
     }
 });
+export default styles;

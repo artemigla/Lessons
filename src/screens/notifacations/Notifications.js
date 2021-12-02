@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { ReturnToHomeScreen } from '../../components/returnToHomeScreen/ReturnToHomeScreen';
+import { ReturnToHomeScreen } from '../../components/ReturnToHomeScreen/ReturnToHomeScreen';
 import PropTypes from 'prop-types';
-import { styles } from './Styles';
+import { styles } from './styles';
 
 export const Notifications = (props) => {
     return (
