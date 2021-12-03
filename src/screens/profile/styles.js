@@ -9,7 +9,9 @@ export const styles = StyleSheet.create({
         height: 150,
         width: 150,
         borderRadius: 100,
-        alignItems: 'center'
+        alignItems: 'center',
+        borderColor: 'blue',
+        borderWidth: 3
     },
     description: {
         color: 'black',

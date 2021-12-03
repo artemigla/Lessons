@@ -4,9 +4,6 @@ export const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'silver'
     },
-    mb: {
-        marginBottom: 30
-    },
     header: {
         height: '9%',
         backgroundColor: '#1E90FF',
@@ -16,6 +13,9 @@ export const styles = StyleSheet.create({
     icon: {
         justifyContent: 'center',
         padding: 3
+    },
+    iconNotifications: {
+        marginRight: 7
     },
     title: {
         alignItems: 'center'
@@ -28,18 +28,26 @@ export const styles = StyleSheet.create({
     wrapper: {
         display: 'flex',
         flexDirection: 'row',
-        marginTop: 10,
-        marginLeft: 10
+        margin: 10,
+        borderWidth: 3,
+        borderRadius: 10,
+        padding: 3,
+        backgroundColor: '#4682B4'
     },
     img: {
         width: 70,
         height: 70,
         borderRadius: 50,
+        borderColor: 'white',
+        borderWidth: 3
     },
     name: {
         color: 'black',
         fontSize: 17,
         marginTop: 21,
         marginLeft: 10
+    },
+    bottom: {
+        flex: 1
     }
 });
