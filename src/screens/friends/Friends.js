@@ -5,17 +5,20 @@ import PropTypes from 'prop-types';
 import { removeFriend } from '../../store/actions';
 import { styles } from './styles';
 export const Friends = ({ navigation }) => {
+
     const { friend } = useSelector(state => state.Reducer);
     const dispatch = useDispatch();
-
     const removeFromFriends = (remove) => dispatch(removeFriend(remove));
+
     return (
         <View style={styles.container}>
             <View style={styles.title}>
                 <Text style={styles.titleFriends}>Friends</Text>
             </View>
             {friend.length === 0 ? (
-                <Text style={styles.emptyList}>Add a friends to the list.</Text>
+                <View style={styles.emptyList}>
+                    <Text style={styles.title}>Add a friends to the list.</Text>
+                </View>
             )
                 :
                 <FlatList
@@ -34,7 +37,7 @@ export const Friends = ({ navigation }) => {
                                     </TouchableOpacity>
                                 </View>
                             </View>
-                        )
+                        );
                     }}
                 />
             }

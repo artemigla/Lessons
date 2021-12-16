@@ -29,7 +29,8 @@ export const styles = StyleSheet.create({
     },
     emptyList: {
         color: '#010101',
-        fontSize: 18
+        fontSize: 18,
+        alignItems: 'center'
     },
     info: {
         flexDirection: 'column',
