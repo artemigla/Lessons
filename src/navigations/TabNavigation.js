@@ -2,6 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import { HomeNavigation } from './HomeNavigation';
+import { Friends } from '../screens/friends/Friends';
 import { Message } from '../screens/message/Message';
 import { Settings } from '../screens/settings/Settings';
 import { Location } from '../screens/location/Location';
@@ -23,6 +24,16 @@ export const TabNavigation = () => {
                     headerShown: false,
                     tabBarIcon: ({ size, color }) => (
                         <Ionicon name={'home'} size={size} color={color} />
+                    )
+                }}
+            />
+            <Screen
+                name={'Friends'}
+                component={Friends}
+                options={{
+                    headerShown: false,
+                    tabBarIcon: ({ size, color }) => (
+                        <Ionicon name='person-circle' size={size} color={color} />
                     )
                 }}
             />
