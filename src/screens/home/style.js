@@ -45,9 +45,16 @@ export const styles = StyleSheet.create({
         color: 'black',
         fontSize: 17,
         marginTop: 21,
-        marginLeft: 10
     },
     bottom: {
         flex: 1
+    },
+    info: {
+        flexDirection: 'column',
+        marginLeft: 10
+    },
+    addFriend: {
+        color: '#00FFFF',
+        fontSize: 15
     }
 });

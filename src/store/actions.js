@@ -1,4 +1,4 @@
-import { ADD_FRIEND } from "./types";
+import { ADD_FRIEND, REMOVE_FRIEND } from "./types";
 
 export const addFriend = (friend) => (dispatch) => {
     dispatch({
@@ -6,3 +6,10 @@ export const addFriend = (friend) => (dispatch) => {
         payload: friend,
     });
 };
+
+export const removeFriend = (friend) => (dispatch) => {
+    dispatch({
+        type: REMOVE_FRIEND,
+        payload: friend
+    })
+}
