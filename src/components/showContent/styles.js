@@ -26,11 +26,11 @@ export const styles = StyleSheet.create({
     },
 
     info: {
-        flexDirection: 'column',
+        flexDirection: 'row',
         marginLeft: 10
     },
     addFriend: {
-        color: '#00FFFF',
-        fontSize: 15
+        justifyContent: 'center',
+        marginLeft: 8
     }
 });
