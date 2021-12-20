@@ -14,7 +14,8 @@ export const ShowContent = ({ item }) => {
     const { friend } = useSelector(state => state.Reducer);
     const addToFriends = (friend) => dispatch(addFriend(friend));
     const removeFromFriends = (remove) => dispatch(removeFriend(remove));
-    const exists = (changeFriend) => {
+
+    const switchFriendStatus = (changeFriend) => {
         if (friend.filter(item => item.id === changeFriend.id).length > 0) {
             return true;
         }
@@ -28,8 +29,10 @@ export const ShowContent = ({ item }) => {
                 <TouchableOpacity onPress={() => navigation.navigate('Profile', { item })}>
                     <Text style={styles.name}>{item.name}</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => exists(item) ? removeFromFriends(item) : addToFriends(item)}>
-                    <Text style={styles.addFriend}>Add friend</Text>
+                <TouchableOpacity onPress={() => switchFriendStatus(item) ? removeFromFriends(item) : addToFriends(item)}>
+                    <Text style={styles.addFriend}>
+                        <Text>Add friend</Text>
+                    </Text>
                 </TouchableOpacity>
             </View>
         </View>

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { removeFriend } from '../../store/actions';
 import { styles } from './styles';
+
 export const Friends = ({ navigation }) => {
 
     const { friend } = useSelector(state => state.Reducer);
@@ -33,7 +34,7 @@ export const Friends = ({ navigation }) => {
                                         <Text style={styles.name}>{item.name}</Text>
                                     </TouchableOpacity>
                                     <TouchableOpacity onPress={() => removeFromFriends(item)}>
-                                        <Text style={styles.deleteFriend}>Delete friend</Text>
+                                        <Text style={styles.deleteFriend}>Remove from friends</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>
