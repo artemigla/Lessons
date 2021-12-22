@@ -1,24 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { removeFriend } from '../../store/actions';
+import { ThemeContext } from '../../contexts/ThemeContext';
 import { styles } from './styles';
 
 export const Friends = ({ navigation }) => {
-
+    const { theme } = useContext(ThemeContext);
     const { friend } = useSelector(state => state.Reducer);
     const dispatch = useDispatch();
     const removeFromFriends = (remove) => dispatch(removeFriend(remove));
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, { backgroundColor: theme.background }]}>
             <View style={styles.title}>
-                <Text style={styles.titleFriends}>Friends</Text>
+                <Text style={[styles.titleFriends, { color: theme.text }]}>Friends</Text>
             </View>
             {friend.length === 0 ? (
                 <View style={styles.emptyList}>
-                    <Text style={styles.title}>Add a friends to the list.</Text>
+                    <Text style={[styles.title, { color: theme.text }]}>Add a friends to the list.</Text>
                 </View>
             )
                 :
@@ -31,7 +32,7 @@ export const Friends = ({ navigation }) => {
                                 <Image style={styles.img} source={{ uri: item.img }} />
                                 <View style={styles.info}>
                                     <TouchableOpacity onPress={() => navigation.navigate('Profile', { item })}>
-                                        <Text style={styles.name}>{item.name}</Text>
+                                        <Text style={[styles.name, { color: theme.text }]}>{item.name}</Text>
                                     </TouchableOpacity>
                                     <TouchableOpacity onPress={() => removeFromFriends(item)}>
                                         <Text style={styles.deleteFriend}>Remove from friends</Text>

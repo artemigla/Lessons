@@ -4,12 +4,14 @@ import { PeopleContext } from '../../contexts/PeopleContext';
 import { ShowContent } from '../../components/showContent/ShowContent';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import PropTypes from 'prop-types';
+import { ThemeContext } from '../../contexts/ThemeContext';
 import { styles } from './style';
 
 export const HomeScreen = ({ navigation }) => {
 
     const [isIndicator, setIsIndicator] = useState(false);
     const { people } = useContext(PeopleContext);
+    const { theme } = useContext(ThemeContext);
 
     useEffect(() => {
         setTimeout(() => {
@@ -18,7 +20,7 @@ export const HomeScreen = ({ navigation }) => {
     }, []);
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, { backgroundColor: theme.background }]}>
             <View style={styles.header}>
                 <TouchableOpacity onPress={() => navigation.openDrawer()} style={styles.icon}>
                     <Ionicon name={'menu-outline'} size={35} style={styles.icon} />

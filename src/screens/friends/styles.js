@@ -4,11 +4,9 @@ export const styles = StyleSheet.create({
         flex: 1,
     },
     wrapper: {
-        display: 'flex',
         flexDirection: 'row',
         marginBottom: 8,
         padding: 5,
-        backgroundColor: '#4682B4'
     },
     name: {
         color: 'black',
@@ -25,7 +23,6 @@ export const styles = StyleSheet.create({
     },
     titleFriends: {
         fontSize: 21,
-        color: 'black',
     },
     emptyList: {
         color: '#010101',

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Ionicon from 'react-native-vector-icons/Ionicons';
@@ -7,20 +7,21 @@ import { CustomDrawer } from '../components/CustomDrawer/CustomDrawer';
 import { Message } from '../screens/message/Message';
 import { Notifications } from '../screens/notifacations/Notifications';
 import { Settings } from '../screens/settings/Settings';
-
+import { ThemeContext } from '../contexts/ThemeContext';
 const { Navigator, Screen } = createDrawerNavigator();
 
 export const Navigation = () => {
 
+    const { theme } = useContext(ThemeContext);
     return (
         <NavigationContainer>
             <Navigator
                 screenOptions={{
                     drawerStyle: {
                         width: '60%',
-                        backgroundColor: '#00BFFF'
+                        backgroundColor: theme.background
                     },
-                    drawerInactiveTintColor: 'white',
+                    drawerInactiveTintColor: theme.text,
                     drawerActiveTintColor: 'red',
                     headerShown: false,
                     drawerType: 'slide'

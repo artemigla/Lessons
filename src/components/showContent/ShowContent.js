@@ -34,8 +34,8 @@ export const ShowContent = ({ item }) => {
                     style={styles.addFriend}
                     onPress={() => switchFriendStatus(item) ? removeFromFriends(item) : addToFriends(item)}>
                     <Ionicons
-                        name={switchFriendStatus(item) ? 'person-remove' : 'person-add'}
-                        color={switchFriendStatus(item) ? '#A9A9A9' : '#000000'}
+                        name={switchFriendStatus(item) ? 'checkmark-sharp' : 'person-add'}
+                        color={switchFriendStatus(item) ? '#32CD32' : '#000000'}
                         size={21}
                     />
                 </TouchableOpacity>

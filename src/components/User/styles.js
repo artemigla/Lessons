@@ -3,8 +3,7 @@ const styles = StyleSheet.create({
     container: {
         height: '30%',
         justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'white',
+        alignItems: 'center'
     },
     logo: {
         width: 80,
@@ -16,7 +15,6 @@ const styles = StyleSheet.create({
         marginBottom: 10
     },
     text: {
-        color: 'black',
         fontWeight: 'bold',
         fontSize: 21
     },

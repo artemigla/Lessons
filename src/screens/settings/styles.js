@@ -4,9 +4,18 @@ export const styles = StyleSheet.create({
         flex: 1,
     },
     content: {
-        flex: 1,
-        justifyContent: "center",
+        flex: 1
+    },
+    toggleSwitch: {
+        justifyContent: 'space-between',
+        flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: 'white'
-    }
+        marginTop: 10,
+    },
+    text: {
+        fontWeight: 'bold',
+        fontSize: 17,
+        marginLeft: 10,
+        color: 'white'
+    },
 });
