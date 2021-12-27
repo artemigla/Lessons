@@ -5,13 +5,14 @@ import { useSelector } from 'react-redux';
 import { HomeNavigation } from './HomeNavigation';
 import { Friends } from '../screens/friends/Friends';
 import { Message } from '../screens/message/Message';
-import { Settings } from '../screens/settings/Settings';
+import { SettingsNavigation } from './SettingsNavigation';
 import { Location } from '../screens/location/Location';
+import { useTranslation } from 'react-i18next';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
 export const TabNavigation = () => {
-
+    const { t } = useTranslation();
     const { friend } = useSelector(state => state.Reducer);
     return (
         <Navigator
@@ -27,7 +28,8 @@ export const TabNavigation = () => {
                     headerShown: false,
                     tabBarIcon: ({ size, color }) => (
                         <Ionicon name={'home'} size={size} color={color} />
-                    )
+                    ),
+                    title: t('translate:mainPage')
                 }}
             />
             <Screen
@@ -38,7 +40,8 @@ export const TabNavigation = () => {
                     tabBarIcon: ({ size, color }) => (
                         <Ionicon name='person-circle' size={size} color={color} />
                     ),
-                    tabBarBadge: friend.length ? friend.length : null
+                    tabBarBadge: friend.length ? friend.length : null,
+                    title: t('translate:friends')
                 }}
             />
             <Screen
@@ -46,24 +49,27 @@ export const TabNavigation = () => {
                 component={Message}
                 options={{
                     headerShown: false,
-                    tabBarIcon: ({ size, color }) => <Ionicon name={'mail'} size={size} color={color} />
+                    tabBarIcon: ({ size, color }) => <Ionicon name={'mail'} size={size} color={color} />,
+                    title: t('translate:message')
                 }}
             />
             <Screen
-                name={'Settings'}
-                component={Settings}
+                name={'SettingsNavigation'}
+                component={SettingsNavigation}
                 options={{
                     headerShown: false,
                     tabBarIcon: ({ size, color }) => (
                         <Ionicon name='settings' size={size} color={color} />
-                    )
+                    ),
+                    title: t('translate:settings')
                 }} />
             <Screen
                 name={'Location'}
                 component={Location}
                 options={{
                     headerShown: false,
-                    tabBarIcon: ({ size, color }) => <Ionicon name={'location'} size={size} color={color} />
+                    tabBarIcon: ({ size, color }) => <Ionicon name={'location'} size={size} color={color} />,
+                    title: t('translate:location')
                 }}
             />
         </Navigator>

@@ -1,0 +1,13 @@
+{
+    "translate": {
+        "mainPage": "Главная",
+        "message": "Сообщения",
+        "notification": "Уведомления",
+        "settings": "Настройки",
+        "friends": "Друзья",
+        "location": "Локация",
+        "removeFriend": "Удалить из друзей",
+        "addFriend": "Добавьте друзей в список.",
+        "chooseLanguage": "Выберите язык"
+    }
+}

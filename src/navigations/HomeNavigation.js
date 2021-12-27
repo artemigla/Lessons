@@ -1,16 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { PeopleContext } from '../contexts/PeopleContext';
 import { ListOfPeople } from '../constants/ListOfPeople';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen } from '../screens/home/HomeScreen';
 import { ProfileScreen } from '../screens/profile/ProfileScreen';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
 export const HomeNavigation = () => {
+    const { theme } = useContext(ThemeContext)
     return (
         <PeopleContext.Provider value={{ people: ListOfPeople }}>
-            <Navigator>
+            <Navigator
+                screenOptions={{
+                    headerStyle: {
+                        backgroundColor: theme.background
+                    },
+                    headerTintColor: theme.text,
+                    headerTitleAlign: 'center'
+                }}
+            >
                 <Screen
                     name={'HomeScreen'}
                     component={HomeScreen}

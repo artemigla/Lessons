@@ -1,0 +1,13 @@
+{
+    "translate": {
+        "mainPage": "Home",
+        "message": "Message",
+        "notification": "Notification",
+        "settings": "Settings",
+        "friends": "Friends",
+        "location": "Location",
+        "removeFriend": "Remove from friends",
+        "addFriend": "Add a friends to the list.",
+        "chooseLanguage": "Choose a language"
+    }
+}
