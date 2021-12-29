@@ -24,11 +24,6 @@ export const styles = StyleSheet.create({
     titleFriends: {
         fontSize: 21,
     },
-    emptyList: {
-        color: '#010101',
-        fontSize: 18,
-        alignItems: 'center'
-    },
     info: {
         flexDirection: 'column',
         marginLeft: 10

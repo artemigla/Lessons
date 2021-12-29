@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { removeFriend } from '../../store/friends/actions';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { useTranslation } from 'react-i18next';
+import { ListEmptyComponent } from '../../components/ListEmptyComponent/ListEmptyComponent';
 import { styles } from './styles';
 
 export const Friends = ({ navigation }) => {
@@ -21,9 +22,7 @@ export const Friends = ({ navigation }) => {
                 <Text style={[styles.titleFriends, { color: theme.text }]}>{t('translate:friends')}</Text>
             </View>
             {friend.length === 0 ? (
-                <View style={styles.emptyList}>
-                    <Text style={[styles.title, { color: theme.text }]}>{t('translate:addFriend')}</Text>
-                </View>
+                <ListEmptyComponent />
             )
                 :
                 <FlatList
