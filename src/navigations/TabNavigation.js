@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicon from 'react-native-vector-icons/Ionicons';
+import { ThemeContext } from '../contexts/ThemeContext';
 import { useSelector } from 'react-redux';
 import { HomeNavigation } from './HomeNavigation';
 import { Friends } from '../screens/friends/Friends';
@@ -12,14 +13,18 @@ import { useTranslation } from 'react-i18next';
 const { Navigator, Screen } = createBottomTabNavigator();
 
 export const TabNavigation = () => {
+    const { theme } = useContext(ThemeContext);
     const { t } = useTranslation();
     const { friend } = useSelector(state => state.Reducer);
     return (
         <Navigator
             initialRouteName={'Home'}
             screenOptions={() => ({
-                tabBarActiveTintColor: 'red'
+                tabBarActiveTintColor: 'red',
+                tabBarStyle: { backgroundColor: theme.background }
             })}
+
+
         >
             <Screen
                 name={'Home'}

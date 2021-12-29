@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
     emptyList: {
         color: '#010101',
         fontSize: 18,
+        marginTop: '35%',
         alignItems: 'center'
     },
 });
