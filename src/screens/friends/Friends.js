@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeFriend } from '../../store/actions';
+import { removeFriend } from '../../store/friends/actions';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { useTranslation } from 'react-i18next';
 import { styles } from './styles';

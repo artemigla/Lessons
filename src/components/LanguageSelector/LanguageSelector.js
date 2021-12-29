@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { View, Text, Pressable } from 'react-native';
-import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import { useTranslation } from 'react-i18next';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { LANGUAGES } from '../../constants/translations/Languages'
@@ -18,7 +17,6 @@ export const LanguageSelector = () => {
         <View style={[styles.container, { backgroundColor: theme.background }]}>
             <View style={styles.row}>
                 <Text style={[styles.title, { color: theme.text }]}>Select a Language</Text>
-                <Ionicons color={{ color: theme.text }} size={28} name='language-outline' />
             </View>
             {LANGUAGES.map(language => {
                 const selectedLanguage = language.code === selectedLanguageCode;

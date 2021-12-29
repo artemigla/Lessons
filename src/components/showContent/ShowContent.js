@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { addFriend, removeFriend } from '../../store/actions';
+import { addFriend, removeFriend } from '../../store/friends/actions';
 import { styles } from './styles';
 
 export const ShowContent = ({ item }) => {
