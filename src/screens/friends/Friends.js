@@ -21,30 +21,26 @@ export const Friends = ({ navigation }) => {
             <View style={styles.title}>
                 <Text style={[styles.titleFriends, { color: theme.text }]}>{t('translate:friends')}</Text>
             </View>
-            {friend.length === 0 ? (
-                <ListEmptyComponent />
-            )
-                :
-                <FlatList
-                    data={friend}
-                    keyExtractor={(item) => item.id.toString()}
-                    renderItem={({ item }) => {
-                        return (
-                            <View style={styles.wrapper}>
-                                <Image style={styles.img} source={{ uri: item.img }} />
-                                <View style={styles.info}>
-                                    <TouchableOpacity onPress={() => navigation.navigate('Profile', { item })}>
-                                        <Text style={[styles.name, { color: theme.text }]}>{item.name}</Text>
-                                    </TouchableOpacity>
-                                    <TouchableOpacity onPress={() => removeFromFriends(item)}>
-                                        <Text style={styles.deleteFriend}>{t('translate:removeFriend')}</Text>
-                                    </TouchableOpacity>
-                                </View>
+            <FlatList
+                data={friend}
+                keyExtractor={(item) => item.id.toString()}
+                ListEmptyComponent={ListEmptyComponent}
+                renderItem={({ item }) => {
+                    return (
+                        <View style={styles.wrapper}>
+                            <Image style={styles.img} source={{ uri: item.img }} />
+                            <View style={styles.info}>
+                                <TouchableOpacity onPress={() => navigation.navigate('Profile', { item })}>
+                                    <Text style={[styles.name, { color: theme.text }]}>{item.name}</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={() => removeFromFriends(item)}>
+                                    <Text style={styles.deleteFriend}>{t('translate:removeFriend')}</Text>
+                                </TouchableOpacity>
                             </View>
-                        );
-                    }}
-                />
-            }
+                        </View>
+                    );
+                }}
+            />
         </View>
     );
 };

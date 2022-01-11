@@ -18,3 +18,7 @@ export const coordinatesPoligon = {
         { point: '16', latitude: 48.674532, longitude: 32.3566193 },
     ]
 }
+export const initialState = {
+    latitude: 48.6870872,
+    longitude: 32.3491104
+}

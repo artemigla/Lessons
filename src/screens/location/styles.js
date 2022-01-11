@@ -15,4 +15,12 @@ export const styles = StyleSheet.create({
         right: 0,
         bottom: 0,
     },
+    showPosition: {
+        margin: 10
+    },
+    textPositionCoordinates: {
+        fontSize: 17,
+        fontWeight: 'bold',
+        color: 'black'
+    }
 });  
