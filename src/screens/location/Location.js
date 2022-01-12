@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { View, Text } from 'react-native';
 import MapView, { Marker, PROVIDER_GOOGLE, Polygon } from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
 import { coordinatesPoligon, initialState } from '../../constants/mapsPoligon/coordinatesPoligon';
+import { ThemeContext } from '../../contexts/ThemeContext';
+import { customThemeForMap, customStandartStyleMap } from '../../constants/mapsPoligon/customThemeForMap';
 import { styles } from './styles';
 
 export const Location = () => {
 
     const [currentPosition, setCurrentPosition] = useState(initialState);
-
+    const { dark, theme } = useContext(ThemeContext);
     useEffect(() => {
         Geolocation.getCurrentPosition(position => {
             setCurrentPosition({
@@ -29,6 +31,7 @@ export const Location = () => {
                 style={styles.mapStyle}
                 showsUserLocation={true}
                 onRegionChangeComplete={(region) => setCurrentPosition(region)}
+                customMapStyle={dark ? customThemeForMap : customStandartStyleMap}
                 zoomEnabled={true}
                 zoomControlEnabled={true}
                 initialRegion={{
@@ -52,8 +55,8 @@ export const Location = () => {
 
             </MapView>
             <View style={styles.showPosition}>
-                <Text style={styles.textPositionCoordinates}>latitude: {currentPosition.latitude} </Text>
-                <Text style={styles.textPositionCoordinates}>longitude: {currentPosition.longitude}</Text>
+                <Text style={[styles.textPositionCoordinates, { color: theme.text }]}>latitude: {currentPosition.latitude} </Text>
+                <Text style={[styles.textPositionCoordinates, { color: theme.text }]}>longitude: {currentPosition.longitude}</Text>
             </View>
         </View>
     );

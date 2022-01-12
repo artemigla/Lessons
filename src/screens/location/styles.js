@@ -20,7 +20,6 @@ export const styles = StyleSheet.create({
     },
     textPositionCoordinates: {
         fontSize: 17,
-        fontWeight: 'bold',
-        color: 'black'
+        fontWeight: 'bold'
     }
 });  
