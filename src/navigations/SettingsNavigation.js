@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { LanguageSelector } from '../components/LanguageSelector/LanguageSelector';
-import { SettingsScreen } from '../screens/settings/Settings';
+import { SettingsScreen } from '../screens/Settings/Settings';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 

@@ -4,10 +4,10 @@ import Ionicon from 'react-native-vector-icons/Ionicons';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { useSelector } from 'react-redux';
 import { HomeNavigation } from './HomeNavigation';
-import { Friends } from '../screens/friends/Friends';
-import { Message } from '../screens/message/Message';
+import { Friends } from '../screens/Friends/Friends';
+import { Message } from '../screens/Message/Message';
 import { SettingsNavigation } from './SettingsNavigation';
-import { Location } from '../screens/location/Location';
+import { Location } from '../screens/Location/Location';
 import { useTranslation } from 'react-i18next';
 
 const { Navigator, Screen } = createBottomTabNavigator();

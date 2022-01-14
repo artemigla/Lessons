@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { addFriend, removeFriend } from '../../store/friends/actions';
+import { addFriend, removeFriend } from '../../store/user/actions';
 import { styles } from './styles';
 
 export const ShowContent = ({ item }) => {
@@ -16,12 +16,7 @@ export const ShowContent = ({ item }) => {
     const addToFriends = (friend) => dispatch(addFriend(friend));
     const removeFromFriends = (remove) => dispatch(removeFriend(remove));
 
-    const switchFriendStatus = (changeFriend) => {
-        if (friend.filter(item => item.id === changeFriend.id).length > 0) {
-            return true;
-        }
-        return false;
-    };
+    const switchFriendStatus = (changeFriend) => friend.some(item => item.id === changeFriend.id);
 
     return (
         <View style={styles.wrapper}>

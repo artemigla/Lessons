@@ -1,6 +1,5 @@
 import React from 'react';
-import { StatusBar, StyleSheet, View, LogBox } from 'react-native';
-LogBox.ignoreLogs(['Reanimated 2']);
+import { StatusBar, StyleSheet, View } from 'react-native';
 import { Navigation } from './src/navigations/Navigation';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';

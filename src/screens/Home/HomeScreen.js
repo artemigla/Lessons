@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { View, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native';
 import { PeopleContext } from '../../contexts/PeopleContext';
-import { ShowContent } from '../../components/showContent/ShowContent';
+import { ShowContent } from '../../components/ShowContent/ShowContent';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import PropTypes from 'prop-types';
 import { ThemeContext } from '../../contexts/ThemeContext';

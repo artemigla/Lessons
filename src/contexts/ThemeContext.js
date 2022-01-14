@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { darkColor, lightColor } from '../components/ColorsTheme/ColorsTheme';
+import { darkColor, lightColor } from '../theme/ColorsTheme/ColorsTheme';
 import PropTypes from 'prop-types';
 
 const customTheme = {
