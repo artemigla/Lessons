@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@react-native-community/geolocation": "^2.0.2",
+    "appcenter": "4.3.0",
+    "appcenter-analytics": "4.3.0",
+    "appcenter-crashes": "4.3.0",
     "react": "17.0.2",
     "react-native": "0.66.3",
     "react-native-maps": "0.30.1"

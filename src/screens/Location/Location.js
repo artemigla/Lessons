@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import MapView, { Marker, PROVIDER_GOOGLE, Polygon } from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
 import { coordinatesPoligon, initialState } from '../../constants/mapsPoligon/coordinatesPoligon';
@@ -10,7 +10,7 @@ import { styles } from './styles';
 export const Location = () => {
 
     const [currentPosition, setCurrentPosition] = useState(initialState);
-    const { dark, theme } = useContext(ThemeContext);
+    const { dark } = useContext(ThemeContext);
     useEffect(() => {
         Geolocation.getCurrentPosition(position => {
             setCurrentPosition({
@@ -34,6 +34,7 @@ export const Location = () => {
                 customMapStyle={dark ? customThemeForMap : customStandartStyleMap}
                 zoomEnabled={true}
                 zoomControlEnabled={true}
+                mapType='hybrid'
                 initialRegion={{
                     latitude: currentPosition.latitude,
                     longitude: currentPosition.longitude,
@@ -52,12 +53,7 @@ export const Location = () => {
                     title={"Trepivska shkola"}
                     description={"Trepivska zagalnoosvitnya shkola"}
                 />
-
             </MapView>
-            <View style={styles.showPosition}>
-                <Text style={[styles.textPositionCoordinates, { color: theme.text }]}>latitude: {currentPosition.latitude} </Text>
-                <Text style={[styles.textPositionCoordinates, { color: theme.text }]}>longitude: {currentPosition.longitude}</Text>
-            </View>
         </View>
     );
 };

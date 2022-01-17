@@ -14,12 +14,5 @@ export const styles = StyleSheet.create({
         left: 0,
         right: 0,
         bottom: 0,
-    },
-    showPosition: {
-        margin: 10
-    },
-    textPositionCoordinates: {
-        fontSize: 17,
-        fontWeight: 'bold'
     }
 });  

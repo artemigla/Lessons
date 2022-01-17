@@ -7,9 +7,9 @@ import ru from './ru/ru.json';
 import ua from './ua/ua.json';
 
 const LANGUAGES = {
-    en,
-    ru,
-    ua
+    'en': en,
+    'ru': ru,
+    'ua': ua
 };
 
 const LANG_CODES = Object.keys(LANGUAGES);
