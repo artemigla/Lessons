@@ -1,7 +1,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import * as RNLocalize from 'react-native-localize';
 import en from './en/en.json';
 import ru from './ru/ru.json';
 import ua from './ua/ua.json';
@@ -11,8 +10,6 @@ const LANGUAGES = {
     'ru': ru,
     'ua': ua
 };
-
-const LANG_CODES = Object.keys(LANGUAGES);
 
 const LANGUAGE_DETECTOR = {
     type: 'languageDetector',
@@ -25,10 +22,7 @@ const LANGUAGE_DETECTOR = {
                 } else {
                     console.log('No language is set, choosing English as fallback');
                 }
-                const findBestAvailableLanguage =
-                    RNLocalize.findBestAvailableLanguage(LANG_CODES);
-
-                callback(findBestAvailableLanguage.languageTag || 'en');
+                callback('en');
                 return;
             }
             callback(language);
