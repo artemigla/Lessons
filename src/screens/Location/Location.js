@@ -34,7 +34,6 @@ export const Location = () => {
                 customMapStyle={dark ? customThemeForMap : customStandartStyleMap}
                 zoomEnabled={true}
                 zoomControlEnabled={true}
-                mapType='hybrid'
                 initialRegion={{
                     latitude: currentPosition.latitude,
                     longitude: currentPosition.longitude,
