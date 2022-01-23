@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { ThemeContext } from '../contexts/ThemeContext';
+import { useTheme } from '@react-navigation/native';
 import { LanguageSelector } from '../components/LanguageSelector/LanguageSelector';
 import { SettingsScreen } from '../screens/Settings/Settings';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
 export const SettingsNavigation = () => {
-    const { theme } = useContext(ThemeContext);
+    const { colors } = useTheme();
     return (
         <Navigator>
             <Screen
@@ -20,9 +20,9 @@ export const SettingsNavigation = () => {
                 component={LanguageSelector}
                 options={{
                     headerStyle: {
-                        backgroundColor: theme.background
+                        backgroundColor: colors.background
                     },
-                    headerTintColor: theme.text
+                    headerTintColor: colors.text
                 }}
             />
         </Navigator>

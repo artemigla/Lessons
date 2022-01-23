@@ -1,16 +1,17 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
 import MapView, { Marker, PROVIDER_GOOGLE, Polygon } from 'react-native-maps';
+import { useTheme } from '@react-navigation/native';
 import Geolocation from '@react-native-community/geolocation';
 import { coordinatesPoligon, initialState } from '../../constants/mapsPoligon/coordinatesPoligon';
-import { ThemeContext } from '../../contexts/ThemeContext';
 import { customThemeForMap, customStandartStyleMap } from '../../constants/mapsPoligon/customThemeForMap';
 import { styles } from './styles';
 
 export const Location = () => {
 
     const [currentPosition, setCurrentPosition] = useState(initialState);
-    const { dark } = useContext(ThemeContext);
+    const { dark } = useTheme();
+
     useEffect(() => {
         Geolocation.getCurrentPosition(position => {
             setCurrentPosition({
@@ -34,7 +35,6 @@ export const Location = () => {
                 customMapStyle={dark ? customThemeForMap : customStandartStyleMap}
                 zoomEnabled={true}
                 zoomControlEnabled={true}
-                mapType='hybrid'
                 initialRegion={{
                     latitude: currentPosition.latitude,
                     longitude: currentPosition.longitude,

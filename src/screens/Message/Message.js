@@ -1,17 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { View, Text } from 'react-native';
 import { ReturnToHomeScreen } from '../../components/ReturnToHomeScreen/ReturnToHomeScreen';
-import { ThemeContext } from '../../contexts/ThemeContext';
+import { useTheme } from '@react-navigation/native';
 import { styles } from './styles';
 
 export const Message = () => {
-
-    const { theme } = useContext(ThemeContext);
+    const { colors } = useTheme();
     return (
-        <View style={[styles.container, { backgroundColor: theme.background }]}>
+        <View style={[styles.container, { backgroundColor: colors.background }]}>
             <ReturnToHomeScreen />
             <View style={styles.content}>
-                <Text style={[{ color: theme.text }]}>Message</Text>
+                <Text style={[{ color: colors.text }]}>Message</Text>
             </View>
 
         </View>

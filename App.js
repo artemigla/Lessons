@@ -4,7 +4,6 @@ import { Navigation } from './src/navigations/Navigation';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './src/store/store';
-import { ThemeProvider } from './src/contexts/ThemeContext';
 import './src/constants/translations/IMLocalize';
 
 const App = () => {
@@ -13,9 +12,7 @@ const App = () => {
       <StatusBar backgroundColor={'#1E90FF'} />
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <ThemeProvider>
-            <Navigation />
-          </ThemeProvider>
+          <Navigation />
         </PersistGate>
       </Provider>
     </View>

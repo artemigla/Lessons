@@ -1,17 +1,20 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { View, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native';
+import { useTheme } from '@react-navigation/native';
 import { PeopleContext } from '../../contexts/PeopleContext';
 import { ShowContent } from '../../components/ShowContent/ShowContent';
 import Ionicon from 'react-native-vector-icons/Ionicons';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { ThemeContext } from '../../contexts/ThemeContext';
 import { styles } from './style';
 
 export const HomeScreen = ({ navigation }) => {
 
+    const dispatch = useDispatch();
+
     const [isIndicator, setIsIndicator] = useState(false);
     const { people } = useContext(PeopleContext);
-    const { theme } = useContext(ThemeContext);
+    const { colors } = useTheme();
 
     useEffect(() => {
         setTimeout(() => {
@@ -20,7 +23,7 @@ export const HomeScreen = ({ navigation }) => {
     }, []);
 
     return (
-        <View style={[styles.container, { backgroundColor: theme.background }]}>
+        <View style={[styles.container, { backgroundColor: colors.background }]}>
             <View style={styles.header}>
                 <TouchableOpacity onPress={() => navigation.openDrawer()} style={styles.icon}>
                     <Ionicon name={'menu-outline'} size={35} style={styles.icon} />
